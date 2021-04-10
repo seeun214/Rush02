@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:42:25 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/10 12:26:44 by keokim           ###   ########.fr       */
+/*   Updated: 2021/04/10 12:34:09 by keokim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ int		is_space(char c);
 int		is_num(char c);
 int		is_valid_num(char *str);
 int		ft_atoi(char *str);
+char	*create_str(int size, char **strs, char *sep);
+char	*ft_strjoin(int size, char **strs, char *sep);
 
 #endif
