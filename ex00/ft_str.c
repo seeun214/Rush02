@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 11:33:29 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/10 21:53:37 by keokim           ###   ########.fr       */
+/*   Updated: 2021/04/10 21:56:09 by kwalee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		ft_strlen(char *str)
 	return (len);
 }
 
-char	*ft_strcpy(char *dst, char *begin, char *end)
+void	ft_strcpy(char *dst, char *begin, char *end)
 {
 	while (begin <= end)
 		*(dst++) = *(begin++);

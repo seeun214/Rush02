@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:42:25 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/10 21:54:04 by keokim           ###   ########.fr       */
+/*   Updated: 2021/04/10 22:46:02 by kwalee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	rush(char *dict, char *num);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 int		ft_strlen(char *str);
-char	*ft_strcpy(char *dst, char *begin, char *end);
+void	ft_strcpy(char *dst, char *begin, char *end);
 char	*ft_strstr(char *str, char *to_find);
 int		is_space(char c);
 int		is_num(char c);
@@ -35,7 +35,8 @@ int		is_num(char c);
 int		is_valid_num(char *str);
 int		ft_atoi(char *str);
 int		*ft_itoa(int nb);
-void	ft_write_char(char *num, char *buffer);
+void	ft_write_str(char *num, char *buffer);
+void	ft_write_char(char c, char *buffer);
 char	*ft_open_read(char *dict);
 char	*ft_strjoin(int size, char **strs, char *sep);
 int     print_all_one(char *buffer, char *str, int i, int len);

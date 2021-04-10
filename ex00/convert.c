@@ -6,18 +6,45 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:27:30 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/10 21:43:50 by kwalee           ###   ########.fr       */
+/*   Updated: 2021/04/10 22:49:56 by kwalee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
 
-void	ft_write_char(char *num, char *buffer)
+void	ft_write_str(char *num, char *buffer)
 {
 	int		i;
 	int		size;
 	char	*start_str;
 
+	start_str = ft_strstr(buffer, num);
+	size = ft_strlen(num);
+	i = 0;
+	while (start_str[i] && start_str[i] != '\n')
+	{
+		while (start_str[i] != ':')
+			i++;
+		if (start_str[i] == ':')
+			i++;
+		while (start_str[i] == ' ')
+			i++;
+		while (start_str[i] >= 32 && start_str[i] <= 126)
+		{
+			write(1, &start_str[i], 1);
+			i++;
+		}
+	}
+}
+
+void	ft_write_char(char c, char *buffer)
+{
+	int		i;
+	int		size;
+	char	*start_str;
+	char	num[2];
+
+	num[0] = c;
 	start_str = ft_strstr(buffer, num);
 	size = ft_strlen(num);
 	i = 0;
@@ -45,14 +72,15 @@ int		print_all_one(char *buffer, char *str, int i, int len)
 	if (str[i] == '1')
 	{
 	   temp[1] = str[i + 1];
-	   ft_write_char(temp, buffer);
+	   ft_write_str(temp, buffer);
 	   i++;
-	   print_unit(buffer, len - i);
+	   if (len - i - 1 != 0)
+		   print_unit(buffer, len - i);
 	}
 	else if (str[i] != '0')
 	{
 		temp[1] = '0';
-		ft_write_char(temp, buffer);
+		ft_write_str(temp, buffer);
 	}
 	return (i);
 }
@@ -66,30 +94,43 @@ void	print_unit(char *buffer, int zamt)
 	j = 0;
 	while (++j < zamt)
 		unit[j] = '0';
-	ft_write_char(unit, buffer);
+	ft_write_str(unit, buffer);
 }
+#include <stdio.h>
 void    print_all(char *buffer, char *str)
 {
     int i;
     int len;
-
+	
     len = ft_strlen(str);
     i = 0;
     while (i < len)
     {
         if (len - i - 1 == 0)
-            ft_write_char(&str[i], buffer);
+		{
+			if (str[i] != '0')
+	            ft_write_char(str[i], buffer);
+		}
         else if ((len - i - 1) % 3 == 2)
-        {
-            ft_write_char(&str[i], buffer);
-            ft_write_char("100", buffer);
+        {	
+			if (str[i] != '0')
+			{	
+				ft_write_char(str[i], buffer);
+            	ft_write_str("100", buffer);
+			}
         }
         else if ((len - i - 1) % 3 == 1)
-        	i = print_all_one(buffer, str, i, len);
+		{
+			if (str[i] != '0')
+        		i = print_all_one(buffer, str, i, len);
+		}
 		else
         {
-            ft_write_char(&str[i], buffer);
-			print_unit(buffer, len - i);
+			if (str[i] != '0')
+			{
+				ft_write_char(str[i], buffer);
+				print_unit(buffer, len);
+			}
         }
         i++;
     }
