@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:27:30 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/10 23:00:38 by kwalee           ###   ########.fr       */
+/*   Updated: 2021/04/10 23:10:02 by kwalee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	ft_write_char(char c, char *buffer)
 			i++;
 		}
 	}
+	write(1, " ", 1);
 }
 
 int		print_all_one(char *buffer, char *str, int i, int len)
@@ -106,9 +107,11 @@ void    print_all(char *buffer, char *str)
 {
     int i;
     int len;
-	
+	int unit;
+
     len = ft_strlen(str);
     i = 0;
+	unit = 0;
     while (i < len)
     {
         if (len - i - 1 == 0)
@@ -135,8 +138,16 @@ void    print_all(char *buffer, char *str)
 			if (str[i] != '0')
 			{
 				ft_write_char(str[i], buffer);
+				print_unit(buffer, len - i);
 			}
-			print_unit(buffer, len - i);
+			else 
+			{
+				if (unit == 0)
+				{
+					print_unit(buffer, len - i);
+					unit++;					
+				}
+			}
         }
         i++;
     }
