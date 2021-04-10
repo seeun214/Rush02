@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:42:25 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/10 12:34:09 by keokim           ###   ########.fr       */
+/*   Updated: 2021/04/10 21:31:08 by keokim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,13 @@
 
 # define DICT_FILE "numbers.dict"
 
-typedef struct		s_dict
-{
-	char			*key;
-	char			*value;
-	struct s_dict	*next;
-}					t_dict;
 
 void	throw_error(void);
-void	rush(int argc, char **argv);
+void	rush(char *dict, char *num);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 int		ft_strlen(char *str);
-char	*ft_strcpy(char *s1, char *s2);
+void	*ft_strcpy(char *dest, char *scr);
 char	*ft_strstr(char *str, char *to_find);
 int		is_space(char c);
 int		is_num(char c);
@@ -40,7 +34,9 @@ int		is_space(char c);
 int		is_num(char c);
 int		is_valid_num(char *str);
 int		ft_atoi(char *str);
-char	*create_str(int size, char **strs, char *sep);
+int		*ft_itoa(int nb);
+void	ft_write_char(char *num, char *buffer);
+char	*ft_open_read(char *dict);
 char	*ft_strjoin(int size, char **strs, char *sep);
 
 #endif

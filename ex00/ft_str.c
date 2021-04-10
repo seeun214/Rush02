@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 11:33:29 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/10 11:40:45 by keokim           ###   ########.fr       */
+/*   Updated: 2021/04/10 21:18:29 by keokim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,18 @@ int		ft_strlen(char *str)
 	return (len);
 }
 
-char	*ft_strcpy(char *s1, char *s2)
+char	*ft_strcpy(char *dest, char *src)
 {
-	int i;
+	int		i;
 
 	i = 0;
-	while (s2[i])
+	while (src[i])
 	{
-		s1[i] = s2[i];
+		dest[i] = src[i];
 		i++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	dest[i] = '\0';
+	return (dest);
 }
 
 char	*ft_strstr(char *str, char *to_find)

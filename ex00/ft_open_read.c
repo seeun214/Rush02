@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   valid.c                                            :+:      :+:    :+:   */
+/*   ft_open_read.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/10 11:42:54 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/10 14:54:05 by keokim           ###   ########.fr       */
+/*   Created: 2021/04/10 20:58:29 by keokim            #+#    #+#             */
+/*   Updated: 2021/04/10 21:02:51 by keokim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
 
-int		is_space(char c)
+char	*ft_open_read(char *dict)
 {
-	return (c == ' ' || (9 <= c && c <= 13));
-}
+	int		fd;
+	char	*buffer;
+	int		file_read;
+	int		file_size;
 
-int		is_num(char c)
-{
-	return ('0' <= c && c <= '9');
-}
-
-int		is_valid_num(char *num)
-{
-	if (!num || (*num == '0' && *(num + 1)))
+	if (!(buffer = (char *)malloc((sizeof(char) * 2048))))
 		return (0);
-	while (*num)
+	file_size = 0;
+	fd = open(dict, O_RDONLY);
+	if ((file_read = read(fd, buffer, 2048)) == -1)
+		throw_error();
+	else
 	{
-		if (!is_num(*num))
-			return (0);
-		num++;
+		file_size = file_read;
+		close(fd);
 	}
-	return (1);
+	return (buffer);
 }

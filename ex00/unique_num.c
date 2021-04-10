@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   valid.c                                            :+:      :+:    :+:   */
+/*   unique_num.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/10 11:42:54 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/10 14:54:05 by keokim           ###   ########.fr       */
+/*   Created: 2021/04/10 14:51:58 by keokim            #+#    #+#             */
+/*   Updated: 2021/04/10 15:19:49 by keokim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
 
-int		is_space(char c)
+char	*unique_num(char *num)
 {
-	return (c == ' ' || (9 <= c && c <= 13));
-}
+	char	*uni_n;
+	char	*front;
+	char	*back;
 
-int		is_num(char c)
-{
-	return ('0' <= c && c <= '9');
-}
-
-int		is_valid_num(char *num)
-{
-	if (!num || (*num == '0' && *(num + 1)))
+	if (!*num)
 		return (0);
-	while (*num)
-	{
-		if (!is_num(*num))
-			return (0);
-		num++;
-	}
-	return (1);
+	front = num;
+	while (*front && is_space(*front))
+		front++;
+	back = front;
+	while (*back)
+		back++;
+	back -= 1;
+	while (is_space(*back))
+		back--;
+	if ((uni_n = (char *)malloc(back - front + 2)) == NULL)
+		return (0);
+	ft_strcpy(uni_n, front, back);
+	return (uni_n);
 }

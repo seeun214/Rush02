@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   valid.c                                            :+:      :+:    :+:   */
+/*   convert.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/10 11:42:54 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/10 14:54:05 by keokim           ###   ########.fr       */
+/*   Created: 2021/04/10 18:27:30 by keokim            #+#    #+#             */
+/*   Updated: 2021/04/10 21:12:30 by keokim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
 
-int		is_space(char c)
+void	ft_write_char(char *num, char *buffer)
 {
-	return (c == ' ' || (9 <= c && c <= 13));
-}
+	int		i;
+	int		size;
+	char	*start_str;
 
-int		is_num(char c)
-{
-	return ('0' <= c && c <= '9');
-}
-
-int		is_valid_num(char *num)
-{
-	if (!num || (*num == '0' && *(num + 1)))
-		return (0);
-	while (*num)
+	start_str = ft_strstr(buffer, num);
+	size = ft_strlen(num);
+	i = 0;
+	while (start_str[i] && start_str[i] != '\n')
 	{
-		if (!is_num(*num))
-			return (0);
-		num++;
+		while (start_str[i] != ':')
+			i++;
+		if (start_str[i] == ':')
+			i++;
+		while (start_str[i] == ' ')
+			i++;
+		while (start_str[i] >= 32 && start_str[i] <= 126)
+		{
+			write(1, &start_str[i], 1);
+			i++;
+		}
 	}
-	return (1);
 }
