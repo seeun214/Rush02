@@ -6,11 +6,12 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:27:30 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/10 22:49:56 by kwalee           ###   ########.fr       */
+/*   Updated: 2021/04/10 23:00:38 by kwalee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
+#include <stdio.h>
 
 void	ft_write_str(char *num, char *buffer)
 {
@@ -35,6 +36,7 @@ void	ft_write_str(char *num, char *buffer)
 			i++;
 		}
 	}
+	write(1, " ", 1);
 }
 
 void	ft_write_char(char c, char *buffer)
@@ -91,12 +93,15 @@ void	print_unit(char *buffer, int zamt)
 	int j;
  
 	unit[0] = '1';
-	j = 0;
-	while (++j < zamt)
+	j = 1;
+	while (j < zamt)
+	{
 		unit[j] = '0';
+		j++;
+	}
+	unit[j] = 0;
 	ft_write_str(unit, buffer);
 }
-#include <stdio.h>
 void    print_all(char *buffer, char *str)
 {
     int i;
@@ -116,6 +121,7 @@ void    print_all(char *buffer, char *str)
 			if (str[i] != '0')
 			{	
 				ft_write_char(str[i], buffer);
+				write(1, " ", 1);
             	ft_write_str("100", buffer);
 			}
         }
@@ -129,8 +135,8 @@ void    print_all(char *buffer, char *str)
 			if (str[i] != '0')
 			{
 				ft_write_char(str[i], buffer);
-				print_unit(buffer, len);
 			}
+			print_unit(buffer, len - i);
         }
         i++;
     }
