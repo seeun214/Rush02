@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 11:42:54 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/10 11:46:37 by keokim           ###   ########.fr       */
+/*   Updated: 2021/04/10 12:29:25 by keokim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		is_valid_num(char *str)
 		return (0);
 	while (*str)
 	{
-		if (!is_number(*str))
+		if (!is_num(*str))
 			return (0);
 		str++;
 	}
