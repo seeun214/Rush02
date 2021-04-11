@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:42:25 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/11 14:01:36 by keokim           ###   ########.fr       */
+/*   Updated: 2021/04/11 19:15:21 by kwalee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int		is_valid_num(char *str);
 void	ft_write_str(char *num, char *buffer, int last);
 void	ft_write_char(char c, char *buffer, int end);
 char	*ft_open_read(char *dict);
-int		print_all_one(char *buffer, char *str, int i, int len, int *unit);
-int		print_all_sub(char *buffer, char *str, int i, int len, int unit);
-int		print_all_zero(char *buffer, char *str, int i, int len, int unit);
+int		print_all_one(char *buffer, char *str, int i, int len);
+int		print_all_sub(char *buffer, char *str, int i, int len);
+void	print_all_zero(char *buffer, char *str, int i, int len);
 void	print_unit(char *buffer, int zamt);
 void	print_all(char *buffer, char *str);
 char	*unique_num(char *num);
