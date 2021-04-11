@@ -6,12 +6,12 @@
 #    By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/11 13:46:29 by keokim            #+#    #+#              #
-#    Updated: 2021/04/11 13:58:23 by keokim           ###   ########.fr        #
+#    Updated: 2021/04/11 20:02:19 by kwalee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 TARGET = rush-02
-SRCS = *.c
+SRCS = convert.c ft_open_read.c ft_str.c main.c rush.c unique_num.c valid.c ft_write.c
 OBJS = $(SRCS:.c=.o)
 INCS = rush.h
 CC = gcc
