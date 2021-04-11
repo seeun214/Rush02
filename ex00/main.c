@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:36:28 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/10 22:33:25 by kwalee           ###   ########.fr       */
+/*   Updated: 2021/04/11 13:45:41 by keokim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 void	throw_error(void)
 {
 	write(2, "Error\n", 6);
+}
+
+void	dect_error(void)
+{
+	write(2, "Dict Error\n", 11);
 }
 
 int		main(int argc, char **argv)

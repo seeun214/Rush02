@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:42:25 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/11 11:42:12 by keokim           ###   ########.fr       */
+/*   Updated: 2021/04/11 13:46:05 by keokim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # define DICT_FILE "numbers.dict"
 
 void	throw_error(void);
+void	dict_error(void);
 void	rush(char *dict, char *num);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
