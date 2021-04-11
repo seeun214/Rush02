@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:42:25 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/11 20:54:44 by kwalee           ###   ########.fr       */
+/*   Updated: 2021/04/11 22:10:44 by keokim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-# define DICT_FILE "numbers.dict"
+# define DICT_FILE "default.dict"
 
 void	throw_error(void);
 void	dict_error(void);

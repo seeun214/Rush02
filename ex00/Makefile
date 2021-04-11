@@ -6,7 +6,7 @@
 #    By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/11 13:46:29 by keokim            #+#    #+#              #
-#    Updated: 2021/04/11 20:02:19 by kwalee           ###   ########.fr        #
+#    Updated: 2021/04/11 22:01:34 by keokim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ $(TARGET) : $(OBJS)
 clean :
 		rm -f $(OBJS)
 
-fclean :
+fclean : clean
 		rm -f $(TARGET)
 
 re : fclean all
