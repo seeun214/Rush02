@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 11:42:54 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/11 11:36:35 by keokim           ###   ########.fr       */
+/*   Updated: 2021/04/11 21:10:03 by kwalee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,23 @@ int		is_valid_num(char *num)
 
 	nbr = num;
 	if (!num || (*num == '0' && *(num + 1)))
+	{
+		throw_error();
 		return (0);
+	}
 	while (*num)
 	{
 		if (!is_num(*num))
+		{
+			throw_error();
 			return (0);
+		}
 		num++;
 	}
 	if (ft_strlen(nbr) > 39)
+	{
+		dict_error();
 		return (0);
+	}
 	return (1);
 }

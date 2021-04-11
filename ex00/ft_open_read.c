@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 20:58:29 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/10 21:02:51 by keokim           ###   ########.fr       */
+/*   Updated: 2021/04/11 21:14:17 by kwalee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,17 @@ char	*ft_open_read(char *dict)
 	int		file_size;
 
 	if (!(buffer = (char *)malloc((sizeof(char) * 2048))))
+	{
+		dict_error();
 		return (0);
+	}
 	file_size = 0;
 	fd = open(dict, O_RDONLY);
 	if ((file_read = read(fd, buffer, 2048)) == -1)
-		throw_error();
+	{
+		dict_error();
+		return (0);
+	}
 	else
 	{
 		file_size = file_read;

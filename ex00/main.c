@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:36:28 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/11 19:55:26 by kwalee           ###   ########.fr       */
+/*   Updated: 2021/04/11 21:09:24 by kwalee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ int		main(int argc, char **argv)
 		num = unique_num(argv[1]);
 		if (is_valid_num(num))
 			rush(DICT_FILE, num);
-		else
-			throw_error();
 		free(num);
 	}
 	else if (argc == 3)
@@ -42,8 +40,6 @@ int		main(int argc, char **argv)
 		num = unique_num(argv[2]);
 		if (is_valid_num(num))
 			rush(argv[1], num);
-		else
-			throw_error();
 		free(num);
 	}
 	return (0);
