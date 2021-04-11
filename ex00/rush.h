@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:42:25 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/11 19:15:21 by kwalee           ###   ########.fr       */
+/*   Updated: 2021/04/11 20:54:44 by kwalee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_open_read(char *dict);
 int		print_all_one(char *buffer, char *str, int i, int len);
 int		print_all_sub(char *buffer, char *str, int i, int len);
 void	print_all_zero(char *buffer, char *str, int i, int len);
-void	print_unit(char *buffer, int zamt);
+void	print_unit(char *buffer, char *str, int zamt);
 void	print_all(char *buffer, char *str);
 char	*unique_num(char *num);
 

@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:27:30 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/11 20:47:15 by kwalee           ###   ########.fr       */
+/*   Updated: 2021/04/11 21:01:27 by kwalee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ void	print_all_zero(char *buffer, char *str, int i, int len)
 	if (str[i] != '0')
 	{
 		ft_write_char(str[i], buffer, 0);
-		print_unit(buffer, len - i);
+		print_unit(buffer, &str[i], len - i);
 		g_unit = 1;
 	}
 	else
 	{
 		if (g_unit == 0)
 		{
-			print_unit(buffer, len - i);
+			print_unit(buffer, &str[i], len - i);
 			g_unit = 1;
 		}
 	}
@@ -45,7 +45,7 @@ int		print_all_one(char *buffer, char *str, int i, int len)
 		i++;
 		if (len - i - 1 != 0)
 		{
-			print_unit(buffer, len - i);
+			print_unit(buffer, &str[i], len - i);
 			g_unit = 1;
 		}
 	}
@@ -59,9 +59,10 @@ int		print_all_one(char *buffer, char *str, int i, int len)
 	return (i);
 }
 
-void	print_unit(char *buffer, int zamt)
+void	print_unit(char *buffer, char *str, int zamt)
 {
 	char	unit[40];
+	int		last;
 	int		j;
 
 	unit[0] = '1';
@@ -72,7 +73,12 @@ void	print_unit(char *buffer, int zamt)
 		j++;
 	}
 	unit[j] = 0;
-	ft_write_str(unit, buffer, 1);
+	j = 0;
+	last = 0;
+	while (str[++j])
+		if (str[j] != '0')
+			last = 1;
+	ft_write_str(unit, buffer, last);
 }
 
 int		print_all_sub(char *buffer, char *str, int i, int len)
