@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:42:25 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/11 13:46:05 by keokim           ###   ########.fr       */
+/*   Updated: 2021/04/11 14:01:36 by keokim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,11 @@ char	*ft_strstr(char *str, char *to_find);
 int		is_space(char c);
 int		is_num(char c);
 int		is_valid_num(char *str);
-int		is_space(char c);
 int		is_num(char c);
 int		is_valid_num(char *str);
-int		ft_atoi(char *str);
-int		*ft_itoa(int nb);
 void	ft_write_str(char *num, char *buffer, int last);
 void	ft_write_char(char c, char *buffer, int end);
 char	*ft_open_read(char *dict);
-char	*ft_strjoin(int size, char **strs, char *sep);
 int		print_all_one(char *buffer, char *str, int i, int len, int *unit);
 int		print_all_sub(char *buffer, char *str, int i, int len, int unit);
 int		print_all_zero(char *buffer, char *str, int i, int len, int unit);
