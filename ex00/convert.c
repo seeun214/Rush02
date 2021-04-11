@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:27:30 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/11 19:06:30 by kwalee           ###   ########.fr       */
+/*   Updated: 2021/04/11 19:50:05 by kwalee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int		print_all_one(char *buffer, char *str, int i, int len)
 	else if (str[i] != '0')
 	{
 		temp[1] = '0';
+		if (str[i + 1] != '0')
+			len++;
 		ft_write_str(temp, buffer, len - i - 2);
 	}
 	return (i);
