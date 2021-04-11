@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:27:30 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/11 19:50:05 by kwalee           ###   ########.fr       */
+/*   Updated: 2021/04/11 20:40:50 by kwalee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int		print_all_sub(char *buffer, char *str, int i, int len)
 {
 	if (len - i - 1 == 0)
 	{
-		if (str[i] != '0')
+		if (str[i] != '0' || len == 1)
 			ft_write_char(str[i], buffer, 1);
 	}
 	else if ((len - i - 1) % 3 == 2)
