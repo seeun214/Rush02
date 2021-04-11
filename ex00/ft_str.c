@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 11:33:29 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/10 21:56:09 by kwalee           ###   ########.fr       */
+/*   Updated: 2021/04/11 11:39:25 by keokim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void	ft_strcpy(char *dst, char *begin, char *end)
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	unsigned int    i;
-	unsigned int    j;
-	
+	unsigned int	i;
+	unsigned int	j;
+
 	i = 0;
 	if (*to_find == '\0')
 		return (str);

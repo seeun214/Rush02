@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:27:30 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/11 08:28:51 by kwalee           ###   ########.fr       */
+/*   Updated: 2021/04/11 11:43:58 by keokim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,18 +71,18 @@ void	ft_write_char(char c, char *buffer, int end)
 
 int		print_all_zero(char *buffer, char *str, int i, int len, int unit)
 {
-	if(str[i] != '0')
+	if (str[i] != '0')
 	{
 		ft_write_char(str[i], buffer, 0);
 		print_unit(buffer, len - i);
-		unit = 1;					
+		unit = 1;
 	}
-	else 
+	else
 	{
 		if (unit == 0)
 		{
 			print_unit(buffer, len - i);
-			unit = 1;					
+			unit = 1;
 		}
 	}
 	return (unit);

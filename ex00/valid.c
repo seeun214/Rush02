@@ -6,7 +6,7 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 11:42:54 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/11 10:57:07 by keokim           ###   ########.fr       */
+/*   Updated: 2021/04/11 11:36:35 by keokim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int		is_num(char c)
 	return ('0' <= c && c <= '9');
 }
 
-#include <stdio.h>
 int		is_valid_num(char *num)
 {
 	char	*nbr;

@@ -6,19 +6,18 @@
 /*   By: keokim <keokim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:42:25 by keokim            #+#    #+#             */
-/*   Updated: 2021/04/11 08:29:02 by kwalee           ###   ########.fr       */
+/*   Updated: 2021/04/11 11:42:12 by keokim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RUSH_H
 # define RUSH_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
 
 # define DICT_FILE "numbers.dict"
-
 
 void	throw_error(void);
 void	rush(char *dict, char *num);
@@ -42,8 +41,8 @@ char	*ft_strjoin(int size, char **strs, char *sep);
 int		print_all_one(char *buffer, char *str, int i, int len, int *unit);
 int		print_all_sub(char *buffer, char *str, int i, int len, int unit);
 int		print_all_zero(char *buffer, char *str, int i, int len, int unit);
-void    print_unit(char *buffer, int zamt);
-void    print_all(char *buffer, char *str);
+void	print_unit(char *buffer, int zamt);
+void	print_all(char *buffer, char *str);
 char	*unique_num(char *num);
 
 #endif
